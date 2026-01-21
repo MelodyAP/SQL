@@ -60,6 +60,13 @@
 
 # Analysis:
 
+
+# How many healthcare benefits does Apple Inc. have?
+SELECT company_name, COUNT(healthcare_benefits) AS health_benefits
+FROM fortune_companies
+WHERE company_name='Apple Inc.'
+;
+
 # Consider all the companies as "healthy work life balanced environment", "admissible" or "undesired" based on the paid time off days available.
 SELECT company_name,
 CASE WHEN paid_time_off_days>=15 THEN 'healthy worklife balanced environment'
@@ -81,7 +88,7 @@ HAVING AVG(employees)>=100000;
 SELECT company_id, maternity_leave_weeks, revenue as annual_revenue
 FROM fortune_companies
 WHERE industry='Technology'
-AND annual_revenue
+AND annual_revenue<100000;
 ;
 
 # Which company in the Telecommunications industry has the lowest revenue amount, and what is the amount?
